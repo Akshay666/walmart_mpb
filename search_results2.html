@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/shop-homepage.css" rel="stylesheet">
+  <script src="scripts.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/css/bootstrap-select.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/js/bootstrap-select.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.css" rel="stylesheet">
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style= "text-align:center">
+    <div class="container">
+
+      <!-- <div class="collapse navbar-collapse" id="navbarResponsive">
+        <a class="navbar-brand" href="#">Search results for Seattle, WA</a>
+      </div> -->
+
+      <div style="padding: 10px; display: inline-block;">
+        <font color="white"><b>Menu</b></font>
+      </div>
+
+      <form class="form-inline">
+        <input class="form-control" type="text" placeholder="Pets/dogs" aria-label="Search">
+      </form>
+
+
+      <!-- <p display: ""> Zillow -->
+
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Grocery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Stores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Cart</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+  </nav>
+<br>
+      <!-- <div style="padding: 15px; display: inline-block;">
+        Listing type
+        <select class="selectpicker">
+          <option>For sale</option>
+          <option>For rent</option>
+          <option>Forclosure</option>
+        </select>
+      </div> -->
+
+      <div style="padding: 15px; display: inline-block;">
+        Any price
+        <select class="selectpicker">
+          <option btn-default>Any</option>
+          <option><$50</option>
+          <option>$50-$100</option>
+          <option>$100+</option>
+        </select>
+      </div>
+
+      <div style="padding: 15px; display: inline-block;">
+        Brand
+        <select class="selectpicker">
+          <option btn-default>Any</option>
+          <option>Pedigree</option>
+          <option>Walmart+</option>
+          <option>Purina</option>
+        </select>
+      </div>
+
+     <div style="padding: 15px; display: inline-block;">
+       Customer rating
+        <select class="selectpicker" multiple data-live-search="true">
+          <option>1+</option>
+          <option>2+</option>
+          <option>3+</option>
+          <option>4+</option>
+          <option>5</option>
+          <option>Any</option>
+        </select>
+      </div>
+
+    <div style="padding: 15px; display: inline-block; text-align:right;">
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal0">
+        Personalize
+      </button>
+
+      <button type="button" class="btn btn-primary" onclick="reset_button_func()">
+        Reset
+      </button>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal0" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">WalmartMPB: Tell us more</h5>
+          </div>
+          <div class="modal-body">
+
+            <p>Age</p>
+            <!-- <div class="list-group"> -->
+              <div class="radio">
+                <label><input type="radio" name="scenario" id = "big_home" checked>  0-6 months</label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="scenario" id = "extra_cash">  6 months - 1 year </label>
+              </div>
+              <div class="radio">
+                <label><input type="radio" name="scenario" id = "pay_off_quickly">  1 yr + </label>
+              </div>
+
+            <form>
+              <p>
+              <div style="padding: 15px; display: inline-block;">
+                Breed
+                 <select class="selectpicker" multiple data-live-search="true">
+                   <option>Breed A</option>
+                   <option>Breed B</option>
+                   <option>Breed C</option>
+                   <option>Breed D</option>
+                   <option>Breed E</option>
+                   <option>Other</option>
+                 </select>
+               </div>
+
+               <div style="padding: 15px; display: inline-block;">
+                 Size
+                  <select class="selectpicker" multiple data-live-search="true">
+                    <option>Small</option>
+                    <option>Medium</option>
+                    <option>Large</option>
+                  </select>
+                </div>
+
+                <div style="padding: 15px; display: inline-block;">
+                  Build
+                   <select class="selectpicker" multiple data-live-search="true">
+                     <option>Under weight</option>
+                     <option>Ideal weight</option>
+                     <option>Over weight</option>
+                   </select>
+                 </div>
+
+                 <div style="padding: 15px; display: inline-block;">
+                   Activity level
+                    <select class="selectpicker" multiple data-live-search="true">
+                      <option>Lethargic</option>
+                      <option>Fairly active</option>
+                      <option>Highly weight</option>
+                    </select>
+                  </div>
+
+
+          </form>
+          <button type="submit" class="btn btn-primary" data-dismiss="modal" onclick="filter_button_func()">Filter</button>
+            <br>
+          </div>
+          <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Filter</button>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+
+  <!-- Page Content -->
+  <div class="container">
+    <br>
+    <!-- <br> -->
+    <!-- <br>
+    <br> -->
+
+    <div class="row">
+
+      <!-- /.col-lg-3 -->
+
+      <div class="col-lg-9">
+        <p>
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 mb-4" id = "card1">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="img/item1.png" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+            <!--      <a href="#">Item One</a> -->
+                </h4>
+                <h5>$35</h5>
+                <p class="card-text">Blue Buffalo Life Protection Formula Natural Adult Dry Dog Food, Chicken and Brown Rice, 30-lb</p>
+
+                  <!-- Button trigger modal -->
+
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    View item
+                  </button>
+                  <button type="button" class="btn btn-primary" data-target="#exampleModal">
+                    Add to cart
+                  </button>
+
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Details</h5>
+                          <p>
+                          <button type="button" class="btn btn-primary">Subscribe</button>
+
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <a href="#"><img class="card-img-top" src="img/item1.png" alt=""></a>
+                          <p>
+                          <h5>$35</h5> <br>
+
+                          Blue Buffalo Life Protection Formula Natural Adult Dry Dog Food, Chicken and Brown Rice, 30-lb <br>
+
+                          <br>
+
+                          Average rating:4.849 / 5, based on 437reviews
+                          Gentle Giants<br>
+                          Walmart # 550340888 <br>
+                          $34.96$1.06 / lb <br>
+                          Free 2-day delivery on $35+ orders<br>
+                          Arrives by Thu, Jun 6<br>
+                          Free pickup today<br>
+                          In stock at Teterboro, 1 Teterboro Landing Drive<br>
+                          <br>
+
+
+                        <p>
+
+                          <div>
+                            <img src="http://placehold.it/350x150">
+                          </div>
+
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" id = "card2">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="img/item21.png" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+            <!--      <a href="#">Item One</a> -->
+                </h4>
+
+                <h5>$20</h5>
+                <p class="card-text">Gentle Giants Canine Nutrition Chicken Dry Dog Food, 33-lb</p>
+                <br>
+                <br>
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
+                    View item
+                  </button>
+                  <button type="button" class="btn btn-primary">
+                    Add to cart
+                  </button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Details</h5>
+                          <p>
+
+                          <button type="button" class="btn btn-primary">Subscribe</button>
+
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <a href="#"><img class="card-img-top" src="img/item2.png" alt=""></a>
+                          <p>
+                          <h5>$20</h5> <br>
+                          Gentle Giants Canine Nutrition Chicken Dry Dog Food, 33-lb <br>
+
+                          <br>
+                          Average rating:4.849 / 5 stars, based on 437 reviews<br>
+                          Gentle Giants <br>
+                          Walmart # 550340888<br>
+                          $34.96$1.06 / lb<br>
+                          Free 2-day delivery on $35+ orders<br>
+                          Arrives by Thu, Jun 6<br>
+                          Free pickup today<br>
+                          In stock at Teterboro, 1 Teterboro Landing Drive<br>
+
+
+                          <br>
+                          <p>
+                          <div>
+                            <img src="http://placehold.it/350x150">
+                          </div>
+
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" id = "card3">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="img/item3.png" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+              <!--      <a href="#">Item One</a> -->
+                </h4>
+                <h5>$40</h5>
+                <p class="card-text">IAMS PROACTIVE HEALTH Adult Minichunks Dry Dog Food Chicken, 40 lb. Bag</p>
+
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3">
+                    View item
+                  </button>
+                  <button type="button" class="btn btn-primary">
+                    Add to cart
+                  </button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Details</h5>
+                          <p>
+                          <button type="button" class="btn btn-primary">Subscribe</button>
+
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <a href="#"><img class="card-img-top" src="img/item3.png" alt=""></a>
+                          <p>
+                          <h5>$42</h5> <br>
+                          896 reviews
+                          IamsWalmart # 564477720 <br>
+                          $10.94-$42.94 <br>
+                          2-day delivery <br>
+                          Size: Choose an option <br>
+                          <br>
+
+                          <div>
+                            <img src="http://placehold.it/350x150">
+                          </div>
+
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" id = "card4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="img/item41.png" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+            <!--      <a href="#">Item One</a> -->
+                </h4>
+                <h5>$50</h5>
+                <p class="card-text">Organic grains + Protein combo</p>
+
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal4">
+                    View items
+                  </button>
+                  <button type="button" class="btn btn-primary">
+                    Add to cart
+                  </button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Details</h5>
+                          <p>
+                          <button type="button" class="btn btn-primary">Subscribe</button>
+
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <a href="#"><img class="card-img-top" src="img/item41.png" alt=""></a>
+                          <p>
+                          <h5>$50</h5> <br>
+
+                          Organic grains + Protein combo <br>
+                          <br>
+                          Eukanuba Lamb & Rice Formula Dry Dog Food, <br> 30 Lb <br>
+                          6 reviews <br>
+                          EukanubaWalmart # 568206388 <br>
+                          $27.89-$41.39 <br>
+                          Size: Choose an option <br>
+
+                          Taste of the Wild High Prairie Canine Recipe with Roasted Bison and Roasted Venison Grain-Free Dry Dog Food, <br> 28 Lb <br>
+                          Walmart # 575193843 <br>
+                          $13.99-$48.99 <br>
+                          2-day delivery <br>
+
+                          You save 15% by subscribing for 6 months <br>
+
+                          <br>
+                          <p>
+                          <div>
+                            <img src="http://placehold.it/350x150">
+                          </div>
+
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" id = "card5">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="img/item52.png" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+            <!--      <a href="#">Item One</a> -->
+                </h4>
+                <h5>$75</h5>
+                <p class="card-text">High protein grain free + organic treats</p>
+
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal5">
+                    View items
+                  </button>
+                  <button type="button" class="btn btn-primary">
+                    Add to cart
+                  </button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Details</h5>
+                          <p>
+                          <button type="button" class="btn btn-primary">Subscribe</button>
+
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <a href="#"><img class="card-img-top" src="img/item52.png" alt=""></a>
+                          <p>
+                          <h5>$75</h5> <br>
+                          Blue Buffalo Wilderness High Protein Grain Free, Natural Adult Dry Dog Food, Chicken <br> 24-lb <br>
+                          Royal Canin Maxi Joint & Coat Care Large Breed Dry Dog Food, <br> 30 lb <br>
+                          Pure Balance Wild & Free Grain-Free Grass-Fed Beef & Boar Recipe, Dry Dog Food, <br> 24 lb <br>                          <br>
+
+                          You save 15% by subscribing for 6 months <br>
+
+                          <br>
+                          <div>
+                            <img src="http://placehold.it/350x150">
+                          </div>
+
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" id = "card6">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top" src="img/item6.png" alt=""></a>
+              <div class="card-body">
+                <h4 class="card-title">
+            <!--      <a href="#">Item One</a> -->
+                </h4>
+                <h5>$71</h5>
+                <p class="card-text">Steak and grains combo</p>
+
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal6">
+                    View items
+                  </button>
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal6">
+                    Add to cart
+                  </button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Details</h5>
+                          <p>
+                          <button type="button" class="btn btn-primary">Subscribe</button>
+
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <a href="#"><img class="card-img-top" src="img/item6.png" alt=""></a>
+                          <p>
+                          <h5>$39</h5> <br>
+                          Pedigree Complete Nutrition Adult Dry Dog Food Grilled Steak & Vegetable Flavor, 20.4 lb. Bag <br>
+                          62 reviews <br>
+                          Pedigree Walmart # 553230417 <br>
+                          $13.74$0.68 / lb <br>
+                          Free 2-day delivery on $35+ orders<br>
+                          Arrives by Mon, Jun 3 <br>
+                          Free pickup today <br>
+                          In stock at North Bergen, 2100 88th St <br>
+                          <br>
+
+                          IAMS PROACTIVE HEALTH Mature Adult Dry Dog Food Chicken, 29.1 lb. Bag <br>
+                          354 reviews <br>
+                          IamsWalmart # 568270933 <br>
+                          $19.94-$31.94 <br>
+                          2-day delivery <br>
+                          Size: Choose an option <br>
+                          <br>
+
+                          Kal Kan® Complete Adult Dog Food 52 lb. Bag <br>
+                          354 reviews <br>
+                          IamsWalmart # 568270933 <br>
+                          $19.94-$31.94 <br>
+                          2-day delivery <br>
+                          Size: Choose an option <br>
+                          <br>
+
+                          You save 15% by subscribing for 6 months <br>
+
+                          <p>
+                          <div>
+                            <img src="http://placehold.it/350x150">
+                          </div>
+
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+            </div>
+
+              <p>
+              <nav id="bottom_nav_bar" aria-label="...">
+                <ul class="pagination">
+                  <li class="page-item disabled">
+                    <span class="page-link">Previous</span>
+                  </li>
+                  <li class="page-item active">
+                    <span class="page-link">
+                      1
+                      <span class="sr-only">(current)</span>
+                    </span>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                  </li>
+                </ul>
+              </nav>
+              <br>
+          </div>
+
+        </div>
+        <!-- /.row -->
+
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <!-- <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">No copyright &copy; Fab 5</p>
+    </div>
+  </footer> -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
